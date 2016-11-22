@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Systematic Review Tool</title>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1" />
+        <meta name="description" content="A tool to support researchers to perform systematic literature reviews">
+	  	<meta name="author" content="Thiago Nascimento">
+		<meta name="keywords" content="systematic review tool">
+        <meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="apple-mobile-web-app-title" content="Systematic Review">
+		<meta name="robots" content="index, follow">
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css " />
+		<link type="text/css" rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<!-- Fixed navbar -->
+        <nav class="navbar navbar-default navbar-fixed-top" id="blue-navbar">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-top" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Systematic Review Tool</a>
+                </div>
+                <div id="navbar-top" class="navbar-collapse collapse">
+        			<ul class="nav navbar-nav">
+
+                    </ul>
+                </div>
+            </div>
+		</nav>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<div class="form-group">
+						<label for="string-search">String Search:</label> <a id="btn-example" href="#">Click to see an example</a>
+						<textarea class="form-control" rows="5" id="string-search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+						<br />
+						<button class="btn btn-default btn-escape" data-start-symbol='"' data-end-symbol='"'>Escape with ""</button>
+						<button class="btn btn-default btn-escape" data-start-symbol='{' data-end-symbol='}'>Escape with {}</button>
+						<button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
+							<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings
+						</button>
+						<br />
+						<br />
+						<label for="console">Console:</label>
+						<textarea class="form-control" rows="13" id="console"></textarea>
+						<br />
+						<button type="button" class="btn btn-default" id="btn-clear-console">Clear</button>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<br />
+					<!-- Nav tabs -->
+					<ul class="nav nav-tabs" role="tablist">
+						<li role="presentation" class="active"><a href="#springer-link-tab" aria-controls="springer" role="tab" data-toggle="tab">Springer Link</a></li>
+						<li role="presentation"><a href="#ieee-tab" aria-controls="ieee" role="tab" data-toggle="tab">IEEE</a></li>
+					</ul>
+
+					<!-- Tab panes -->
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane fade in active" id="springer-link-tab">
+							<br />
+							<form>
+								<div class="form-group">
+									<label for="springer-link-key">Key</label>
+									<input type="text" class="form-control" id="springer-link-key" placeholder="Type the key">
+								</div>
+
+								<div class="form-group">
+									<label for="springer-link-key">Range</label>
+									<div class="row">
+										<div class="col-md-6">
+											<select class="form-control" id="springer-link-startingYear"></select>
+										</div>
+										<div class="col-md-6">
+											<select class="form-control" id="springer-link-endingYear"></select>
+										</div>
+									</div>
+
+
+								</div>
+
+								<div class="form-group">
+									<label for="springer-link-subject">Subject</label>
+									<select class="form-control" id="springer-link-subject">
+										<option value="Architecture & Design">Architecture & Design</option>
+										<option value="Astronomy">Astronomy</option>
+										<option value="Biomedical Sciences">Biomedical Sciences</option>
+										<option value="Business & Management">Business & Management</option>
+										<option value="Chemistry">Chemistry</option>
+										<option value="Computer Science">Computer Science</option>
+										<option value="Earth Sciences & Geography">Earth Sciences & Geography</option>
+										<option value="Economics">Economics</option>
+										<option value="Education & Language">Education & Language</option>
+										<option value="Energy">Energy</option>
+										<option value="Engineering">Engineering</option>
+										<option value="Environmental Sciences">Environmental Sciences</option>
+										<option value="Food Science & Nutrition">Food Science & Nutrition</option>
+										<option value="Law">Law</option>
+										<option value="Life Sciences">Life Sciences</option>
+										<option value="Materials">Materials</option>
+										<option value="Mathematics">Mathematics</option>
+										<option value="Medicine">Medicine</option>
+										<option value="Philosophy">Philosophy
+										<option value="Physics">Physics</option>
+										<option value="Psychology">Psychology</option>
+										<option value="Public Health">Public Health</option>
+										<option value="Social Sciences">Social Sciences</option>
+										<option value="Statistics">Statistics</option>
+									</select>
+								</div>
+								<button type="submit" class="btn btn-primary btn-send" id="btn-send-springer-link">Send</button>
+							</form>
+						</div>
+						<div role="tabpanel" class="tab-pane fade" id="ieee-tab">
+							<br />
+							<p><i>Coming soon...</i></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Settings</h4>
+					</div>
+					<div class="modal-body">
+						<p>body&hellip;</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary">Save</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
+
+		<!-- Vendors -->
+		<script type="text/javascript" src="js/vendor/jquery.min.js"></script>
+		<script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
+		<!-- Core -->
+		<script type="text/javascript" src="js/util/separate.js"></script>
+		<script type="text/javascript" src="js/util/escape.js"></script>
+		<script type="text/javascript" src="js/util/console.js"></script>
+		<!-- Search Apis -->
+		<script type="text/javascript" src="js/api/springer-link.js"></script>
+		<!-- Main Script -->
+		<script type="text/javascript" src="js/script.js"></script>
+	</body>
+</html>
