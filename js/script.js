@@ -16,7 +16,20 @@ $(function(){
         }));
     }
 
+    // Default options
+
+    if( ! localStorage.getItem("springer-link-subject")){
+        localStorage.setItem("springer-link-subject", "Computer Science");
+    }
+    if( ! localStorage.getItem("springer-link-startingYear")){
+        localStorage.setItem("springer-link-startingYear", "1999");
+    }
+    if( ! localStorage.getItem("springer-link-endingYear")){
+        localStorage.setItem("springer-link-endingYear", "2016");
+    }
+
     //Load saved data
+
     $("#springer-link-key").val(localStorage.getItem("springer-link-key"));
     $("#springer-link-subject").val(localStorage.getItem("springer-link-subject"));
     $("#springer-link-startingYear").val(localStorage.getItem("springer-link-startingYear"));
